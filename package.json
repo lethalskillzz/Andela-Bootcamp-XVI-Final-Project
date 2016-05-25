@@ -1,0 +1,14 @@
+{
+  "name": "Andela-Bootcamp-XVI-Final-Project",
+  "version": "1.0.0",
+  "description": "Andela bootcamp 16 projects los",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "lethalskillzz@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
