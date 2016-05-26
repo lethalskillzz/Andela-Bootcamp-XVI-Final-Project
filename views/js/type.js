@@ -11,50 +11,47 @@ pic.width = 102;
 /*localStorage.removeItem("full_name");
 localStorage.removeItem("profile_pic");*/
 
+ var fiveMinutes = 60 * 5,
+ display = document.getElementById('time_count');
+ startTimer(fiveMinutes, display);
+  
 
 $('#start_submit').on('click',function() {
-    alert("yeeey");
-  var time_count = document.getElementById('time_count');
-  var seconds = 0, minutes = 0, hours = 0,
-      t;
-  
-  function add() {
-    seconds++;
-    if (seconds >= 60) {
-        seconds = 0;
-        minutes++;
-        if (minutes >= 60) {
-            minutes = 0;
-            hours++;
-        }
-    }
-    time_count.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-    timer();
-  }
-  
-  function timer() {
-    t = setTimeout(add, 1000);
-  }
-  
-  timer();
+      
+   
     
 });
 
 
-/*
-// Start button 
-start.onclick = timer;
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
 
-// Stop button 
-stop.onclick = function() {
-    clearTimeout(t);
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds; 
+
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+    setInterval(timer, 1000);
 }
-
-// Clear button 
-clear.onclick = function() {
-    h1.textContent = "00:00:00";
-    seconds = 0; minutes = 0; hours = 0;
-}*/
 
 
 });
