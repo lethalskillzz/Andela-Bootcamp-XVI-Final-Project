@@ -6,6 +6,8 @@
 		<meta name="keywords" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
@@ -27,8 +29,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="about.html">About</a></li>
-						<li><a href="services.html">More</a></li>
-						<li><a href="contact_us.html" class="button special">Try it</a></li>
+						<li><a href="#login" class="button special">Try it</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -39,7 +40,7 @@
 					<h2>Typing Speed Matters!</h2>
 					<p>We provide the most accurate tool of measuring your typing speed.</p>
 					<ul class="actions">
-						<li><a href="#login" class="button big alt">Try it</a></li>
+						<li><a id="modal_trigger" href="#modal" class="button big alt">Try it</a></li>
 					</ul>
 				</div>
 			</section>
@@ -77,12 +78,17 @@
 								<p>Think about every time you have to look at the keyboard to find the right key.  Or, maybe you find yourself constantly making mistakes and having to go back and make corrections as you type.</p>
 							</section>
 						</div>
+						<div class="3u">
+							<section class="special box">
+								<i class="icon fa-suitcase major"></i>
+								<h3>Job Prospects</h3>
+								<p> Typing is not an optional skill anymore. Many employers require computer skills and a certain typing speed to even be considered for some positions.</p>
+							</section>
+						</div>
 						
 					</div>
 				</div>
 			</section>
-			
-			
 		
 
             
@@ -92,8 +98,8 @@
 				<div class="container">
 
 					<header class="major">
-						<h2>Leader Board</h2>
-						<p>We habour some of the leading African experts in their field.</p>
+						<h2>Leaderboard</h2>
+						<p>Our fastest typers.</p>
 					</header>
 
 					<section class="profiles">
@@ -101,26 +107,27 @@
 							<section class="3u 6u(medium) 12u$(xsmall) profile">
 								<img src="img/profile_placeholder.gif" alt="" />
 								<h4>Engr. Ibrahim</h4>
-								<p>Managing Director</p>
+								<p>Gold</p>
 							</section>
 							<section class="3u 6u$(medium) 12u$(xsmall) profile">
 								<img src="img/profile_placeholder.gif" alt="" />
 								<h4>Engr Salih</h4>
-								<p>Director of Hardware & Networking</p>
+								<p>Silver</p>
 							</section>
 							<section class="3u 6u(medium) 12u$(xsmall) profile">
 								<img src="img/profile_placeholder.gif" alt="" />
 								<h4>Engr. Abdulkadir</h4>
-								<p>Director of Software</p>
+								<p>Bronze</p>
+							</section>
+							
+							<section class="3u 6u(medium) 12u$(xsmall) profile">
+								<img src="img/profile_placeholder.gif" alt="" />
+								<h4>Engr. Abdulkadir</h4>
+								<p>Copper</p>
 							</section>
 						
 						</div>
 					</section>
-					<footer>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam dolore illum, temporibus veritatis eligendi, aliquam, dolor enim itaque veniam aut eaque sequi qui quia vitae pariatur repudiandae ab dignissimos ex!</p>
-					
-					</footer>
 				</div>
 			</section>
 			
@@ -200,35 +207,39 @@
 			</footer>
 
 
-<!-- The Modal -->
+	<!-- The Modal -->
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">×</span>
-      <h2>Modal Header</h2>
+      <p style="color: white;font-size: 18px;font-weight: bold;">TRY IT!</p>
     </div>
     <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
+     <ul class="actions">
+		<li><a href="#login" id="google_login" class="button special" style="color: white;font-size: 25px;font-weight: bold;">LOGIN WITH GOOGLE</a></li>
+     </ul>
     </div>
   </div>
 
 </div>
+   
+  </body>
 
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+<!-- Firebase script. -->
+ <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCA8BaB3QCru0NDpsxH7Q9LhBifLMmpr-8",
+    authDomain: "project-4631066899229325357.firebaseapp.com",
+    databaseURL: "https://project-4631066899229325357.firebaseio.com",
+    storageBucket: "project-4631066899229325357.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+
+
 </html>
