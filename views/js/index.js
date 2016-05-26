@@ -43,12 +43,24 @@ window.onclick = function(event) {
 $('#google_login').on('click',function() {
   
 var ref = new Firebase("https://flickering-inferno-1776.firebaseio.com");
+
 ref.authWithOAuthPopup("google", function(error, authData) { 
   if (error) {
     console.log("Login Failed!", error);
   } else {
     console.log("Authenticated successfully with payload:", authData);
-  }
+    var usersRef = ref.child("users");
+    var userRef = usersRef.child(authData.uid);
+    userRef.set({
+    email: authData.google.email,
+    full_name: authData.google.displayName,
+    profile_pic: authData.google.profileImageURL
+    });
+    
+    localStorage.full_name = authData.google.displayName;
+    localStorage.profile_pic = authData.google.profileImageURL;
+    window.location.href = "/type.html";
+ }
   
  }, {
   remember: "sessionOnly",
@@ -56,8 +68,6 @@ ref.authWithOAuthPopup("google", function(error, authData) {
 });
 
 });  
-
-
 
 });
 
