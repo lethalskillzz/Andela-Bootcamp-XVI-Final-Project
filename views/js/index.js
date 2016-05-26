@@ -13,7 +13,14 @@ $(window).scroll(function() {
     }
 });
 
-    
+$('#leader_board').on('click',function() {    
+  window.scrollTo(0, 1300); 
+});
+
+$('#about').on('click',function() {    
+  window.scrollTo(0, 2300); 
+});
+
 
 // When the user clicks the button, open the modal 
 $('#modal_trigger').on('click',function() {
