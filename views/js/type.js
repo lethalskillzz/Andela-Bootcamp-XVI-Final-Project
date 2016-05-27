@@ -59,6 +59,8 @@ $('#result_save').on('click',function() {
     uidRef.update({
      "speed": speed
     });
+    
+    window.location.href = "/index";
 });
 
 
@@ -95,10 +97,6 @@ function startTimer(duration, display) {
     setInterval(timer, 1000);
 }
 
-function processScore() {
-  var output_len = output.length,
-  input_len = input.length;
-}
 
 function showScore() {
   
