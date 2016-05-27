@@ -14,7 +14,7 @@ third_score = document.getElementById('3rd_score');
 var userRef = new Firebase("https://flickering-inferno-1776.firebaseio.com/users");
 userRef.orderByChild("speed").on("value", function(snapshot) {
   snapshot.forEach(function(data) {
-    console.log("The " + data.key() + " dinosaur's score is " + data.val());
+    console.log("The " + data.key() + "score is " + data.val());
   });
 });
 
