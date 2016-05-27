@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 
+//variable initialization
 var first_img = document.getElementById('1st_img'),
 first_name = document.getElementById('1st_name'),
 first_score = document.getElementById('1st_score'),
@@ -18,6 +19,7 @@ userRef.orderByChild("speed").on("value", function(snapshot) {
   });
 });
 
+//on window scroll
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
 
@@ -30,10 +32,12 @@ $(window).scroll(function() {
     }
 });
 
+//leaderboard tab button click
 $('#leader_board').on('click',function() {    
   window.scrollTo(0, 1300); 
 });
 
+//about tab button click
 $('#about').on('click',function() {    
   window.scrollTo(0, 2300); 
 });
@@ -63,7 +67,7 @@ window.onclick = function(event) {
 
 });
 
-
+//login with google button
 $('#google_login').on('click',function() {
   
 var ref = new Firebase("https://flickering-inferno-1776.firebaseio.com");

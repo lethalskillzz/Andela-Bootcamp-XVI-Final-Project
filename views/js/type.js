@@ -1,14 +1,12 @@
 $(document ).ready(function() {
 
+//variable initialization
 var name = document.getElementById('full_name'),
 pic = document.getElementById('profile_pic');
 name.textContent = localStorage.full_name;
 pic.src = localStorage.profile_pic;
 pic.height = 102;
 pic.width = 102;
-
-/*localStorage.removeItem("full_name");
-localStorage.removeItem("profile_pic");*/
 
  var oneMinute = 60,
  timer_display = document.getElementById('time_count'),
@@ -20,7 +18,7 @@ localStorage.removeItem("profile_pic");*/
  result_speed = document.getElementById('result_speed'),speed,
  speed = 0;
  
- 
+ //Array of sample text
  var strToTest = new Array("Innovative Technical Solutions, LLC (ITS) is a Native" + 
                 " American owned business that was established in Paducah, " + 
                 "Kentucky in April 2000. ITS is a certified and Small Disadvantaged " + 
@@ -47,23 +45,23 @@ localStorage.removeItem("profile_pic");*/
                 "environmental work plans, cleanup actions, cemetery records, and " + 
                 "various Federal laws such as CERCLA, Paper Reduction,");
                 
-                
+ //load text to view              
  text_output.textContent = strToTest;
  
+  //start timer
+ startTimer(oneMinute, timer_display);
   
-startTimer(oneMinute, timer_display);
-  
+//click save button  
 $('#result_save').on('click',function() { 
     var ref = new Firebase("https://flickering-inferno-1776.firebaseio.com/users");
     var uidRef = ref.child(localStorage.userRef);
     uidRef.update({
      "speed": speed
     });
-    
-    window.location.href = "/index";
+    window.location.href = "/";
 });
 
-
+//timer function
 function startTimer(duration, display) {
     var start = Date.now(),
         diff,
@@ -97,7 +95,7 @@ function startTimer(duration, display) {
     setInterval(timer, 1000);
 }
 
-
+//prepare and display result dialog 
 function showScore() {
   
   result_name.textContent = localStorage.full_name;
