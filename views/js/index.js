@@ -13,12 +13,17 @@ $(document).ready(function () {
 
 
   var userRef = new Firebase("https://flickering-inferno-1776.firebaseio.com/users");
-  userRef.orderByValue("speed").on("value", function (snapshot) {
-    snapshot.forEach(function (data) {
-      console.log("The " + data.key() + "score is " + data.val());
-    });
+  userRef.on("value", function (snapshot) {
+    
+    for (variable in object) {
+    }
+
+    console.log(snapshot.val());
+  }, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
   });
 
+ 
   //on window scroll
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
