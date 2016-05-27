@@ -17,7 +17,38 @@ localStorage.removeItem("profile_pic");*/
  modal = document.getElementById('result_modal'),
  result_name = document.getElementById('result_full_name'),
  result_pic = document.getElementById('result_profile_pic'),
- result_speed = document.getElementById('result_speed'),speed;
+ result_speed = document.getElementById('result_speed'),speed,
+ speed = 0;
+ 
+ 
+ var strToTest = new Array("Innovative Technical Solutions, LLC (ITS) is a Native" + 
+                " American owned business that was established in Paducah, " + 
+                "Kentucky in April 2000. ITS is a certified and Small Disadvantaged " + 
+                "Business by the U.S. Small Business Administration. Our headquarters " + 
+                "are in Paducah, Kentucky and we have" + 
+                " satellite offices located in Tennessee, " + 
+                "Ohio, and Illinois. ITS is a leading" + 
+                " edge Information Technology firm that " + 
+                "is comprised of professionals with a broad" + 
+                " range of experience in software " + 
+                "development, high-speed imaging/scanning (TIFF, PDF, Text, " + 
+                "and OCR capabilities), document management, records management," + 
+                " relevance management, information security, environmental " + 
+                "management, fire services management, fire protection " + 
+                "engineering, and protective force expertise.",
+                "The ITS Information Technology (IT) Team are experts " + 
+                "in the identification, capture, indexing, microfilming, imaging, " + 
+                "disposition, turnover, storage, and retrieval of records, " + 
+                "and in the administration of records management databases. " + 
+                "The types of records we have extensive experience in managing " + 
+                "include waste management, hazardous waste, waste shipment, " + 
+                "environmental compliance, environmental" + 
+                " monitoring, feasibility studies, " + 
+                "environmental work plans, cleanup actions, cemetery records, and " + 
+                "various Federal laws such as CERCLA, Paper Reduction,");
+                
+                
+ text_output.textContent = strToTest;
  
   
 startTimer(oneMinute, timer_display);
@@ -76,13 +107,14 @@ function showScore() {
   result_pic.height = 102;
   result_pic.width = 102;
   
-  output = text_input.value,
-  input = text_input.value;
+  input = text_input.value.trim();
   
-  speed = input.replace(/  /g," ").split(" ").length;//Math.round(((input.replace(/  /g," ").split(" ").length)/3) * 60);
+  speed = input.replace(/  /g," ").split(" ").length;
   result_speed.textContent = "speed: "+speed+" wpm";
-                  
+  
+  timer_display.style.visibility = 'hidden';              
   modal.style.display = "block";
+  
   
 }
    

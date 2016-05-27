@@ -1306,48 +1306,7 @@
 		text-transform:  capitalize;
 	} 
 		
-		
-/*********************************************************************************/
-/* Quote                                                                         */
-/*********************************************************************************/
-	
-	#quote
-	{
-		position: relative;
-		text-align: center;
-		background: url(../img/banner.jpg) no-repeat center center;
-		background-attachment: fixed;
-		background-size: cover;
-	}
 
-		#quote:before
-		{
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background: url("../img/dark_tint.png");
-		}
-	
-		#quote section
-		{
-			border-top: 1px solid;
-			border-bottom: 1px solid;
-			border-color: rgba(255,255,255,.1);
-		}
-
-		#quote blockquote
-		{
-			position: relative;
-			border: none;
-			margin: 0;
-			font-weight: 300;
-			padding: 7em 0em 7em;
-			color: #ffffff
-		}	
-		
 
 /* The Modal (background) */
 .modal {
@@ -1371,7 +1330,7 @@
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 40%;
+    width: 30%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -1411,7 +1370,7 @@
     color: white;
 }
 
-.modal-body {padding: 18px 66px;}
+.modal-body {padding: 18px 66px 18px 66px;}
 
 
  
