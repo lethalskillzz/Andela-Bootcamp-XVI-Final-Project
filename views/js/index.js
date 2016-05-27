@@ -1,5 +1,22 @@
 $( document ).ready(function() {
 
+var first_img = document.getElementById('1st_img'),
+first_name = document.getElementById('1st_name'),
+first_score = document.getElementById('1st_score'),
+second_img = document.getElementById('2nd_img'),
+second_name = document.getElementById('2nd_name'),
+second_score = document.getElementById('2nd_score'),
+third_img = document.getElementById('3rd_img'),
+third_name = document.getElementById('3rd_name'),
+third_score = document.getElementById('3rd_score');
+
+
+var userRef = new Firebase("https://flickering-inferno-1776.firebaseio.com/users");
+userRef.orderByChild("speed").on("value", function(snapshot) {
+  snapshot.forEach(function(data) {
+    console.log("The " + data.key() + " dinosaur's score is " + data.val());
+  });
+});
 
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();

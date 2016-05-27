@@ -10,26 +10,23 @@ pic.width = 102;
 /*localStorage.removeItem("full_name");
 localStorage.removeItem("profile_pic");*/
 
- var oneMinutes = 60,
- display = document.getElementById('time_count'),
- output = document.getElementById('text_output'),
- input = document.getElementById('text_input'),
- modal = document.getElementById('myModal'),
+ var oneMinute = 60,
+ timer_display = document.getElementById('time_count'),
+ text_output = document.getElementById('text_output'),
+ text_input = document.getElementById('text_input'),
+ modal = document.getElementById('result_modal'),
  result_name = document.getElementById('result_full_name'),
  result_pic = document.getElementById('result_profile_pic'),
- result_speed = document.getElementById('result_speed'),
- result_accuracy = document.getElementById('result_accuracy'),
- speed,accuracy;
+ result_speed = document.getElementById('result_speed'),speed;
  
- 
-startTimer(oneMinutes, display);
+  
+startTimer(oneMinute, timer_display);
   
 $('#result_save').on('click',function() { 
     var ref = new Firebase("https://flickering-inferno-1776.firebaseio.com/users");
     var uidRef = ref.child(localStorage.userRef);
     uidRef.update({
-     "speed": speed,
-     "accuracy": accuracy
+     "speed": speed
     });
 });
 
@@ -39,6 +36,7 @@ function startTimer(duration, display) {
         diff,
         minutes,
         seconds;
+        
     function timer() {
         // get the number of seconds that have elapsed since 
         // startTimer() was called
@@ -58,6 +56,7 @@ function startTimer(duration, display) {
             // example 05:00 not 04:59
             //start = Date.now() + 1000;
             showScore();
+            
         }
     };
     // we don't want to wait a full second before the timer starts
@@ -77,7 +76,16 @@ function showScore() {
   result_pic.height = 102;
   result_pic.width = 102;
   
+  output = text_input.value,
+  input = text_input.value;
+  
+  speed = input.replace(/  /g," ").split(" ").length;//Math.round(((input.replace(/  /g," ").split(" ").length)/3) * 60);
+  result_speed.textContent = "speed: "+speed+" wpm";
+                  
   modal.style.display = "block";
+  
 }
+   
+  
    
 });
