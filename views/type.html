@@ -7,12 +7,12 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Generic - Transit by TEMPLATED</title>
+		<title>QuickType - Type</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+	  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -24,40 +24,66 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
+		<link rel="icon" type="image/x-icon" href="img/logo.png">
 	</head>
 	<body>
 
 		<!-- Two -->
 		<section id="two" class="wrapper style2 special">
-				<div class="container">
-					
+				<div class="container">					
 						<div class="row">
 							<section class="3u 6u(medium) 12u$(xsmall) profile">
 								<img id="profile_pic" src="img/profile_placeholder.gif" alt="" />
 								<h4 id="full_name"> </h4>
 							</section>	
-						</div>
-						
+						</div>						
 				</div>
 				
 				<div class="container">
 					
-					<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
+					<p id="text_input">Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
 				</div>
 				
 				<div class="container ">
-				         <h3 id="time_count" style="color: white;font-size: 38px;font-weight: bold;">05:00</h3>									
-                </div>
+				  <h3 id="time_count" style="color: white;font-size: 38px;font-weight: bold;">01:00</h3>									
+        </div>
 				
 				<div class="container ">				
 					<div class="12u$">
-								<textarea name="message" id="input" placeholder=" " rows="6"></textarea>
-				    </div>					
+								<textarea id="text_input" placeholder=" " rows="6"></textarea>
+				 </div>					
 				</div>
-				
-			
 				
 			</section>
 						
+		 <!-- Result Modal -->
+     <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      
+      <p style="color: white;font-size: 18px;font-weight: bold;">New Score!</p>
+    </div>
+    <div class="modal-body">
+			<div class="container">					
+						<div class="row">
+							<section class="3u 6u(medium) 12u$(xsmall) profile">
+								<img id="result_profile_pic" src="img/profile_placeholder.gif" alt="" />
+								<h4 id="result_full_name"> </h4>
+							</section>	
+						</div>						
+				</div>
+	<div class="container">	
+       <p id="result_speed" style="font-size: 13px;font-weight: bold;">Speed:</p>
+	     <p id="result_accuracy" style="font-size: 13px;font-weight: bold;">Accuracy:</p>
+	 </div>
+	 <div class="container">	
+	   <a id="result_save" href="#save" class="button special">Save</a>
+	 </div>
+    </div>
+  </div>
+
+</div>
 	</body>
 </html>

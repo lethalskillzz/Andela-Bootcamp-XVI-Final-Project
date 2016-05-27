@@ -64,9 +64,10 @@ ref.authWithOAuthPopup("google", function(error, authData) {
     profile_pic: authData.google.profileImageURL
     });
     
+    localStorage.userRef = authData.uid;
     localStorage.full_name = authData.google.displayName;
     localStorage.profile_pic = authData.google.profileImageURL;
-    window.location.href = "/type.html";
+    window.location.href = "/type";
  }
   
  }, {
