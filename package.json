@@ -8,6 +8,9 @@
   },
   "author": "lethalskillzz@gmail.com",
   "license": "(ISC) MIT",
+  "engines": {
+    "node": "0.10.32"
+  },
   "dependencies": {
     "express": "^4.13.4"
   }
