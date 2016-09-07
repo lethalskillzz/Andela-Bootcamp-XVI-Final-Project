@@ -9,6 +9,6 @@ My Andela Bootcamp Final Project (Typing Speed Application)<br>
 ## Extra Credit
 * Use firebase to persist data (as a datastore)
 
-### project URL
+### Project url
 https://andela-project.herokuapp.com  
 
